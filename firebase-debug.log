@@ -1,0 +1,21 @@
+[debug] [2022-06-27T23:35:14.621Z] ----------------------------------------------------------------------
+[debug] [2022-06-27T23:35:14.623Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Aluno\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-06-27T23:35:14.623Z] CLI Version:   11.1.0
+[debug] [2022-06-27T23:35:14.624Z] Platform:      win32
+[debug] [2022-06-27T23:35:14.624Z] Node Version:  v16.13.1
+[debug] [2022-06-27T23:35:14.625Z] Time:          Mon Jun 27 2022 20:35:14 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2022-06-27T23:35:14.625Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-06-27T23:35:14.631Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-06-27T23:35:14.631Z] > authorizing via signed-in user (eduarda_b_campos@estudante.sesisenai.org.br)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Aluno\Documents\GitHub\atividade_avaliativa_biblioteca_Eduarda_Bolgenhagen_De_Campos
+
