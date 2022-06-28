@@ -19,6 +19,7 @@
   "homepage": "https://github.com/eduardabolgenhagen/atividade_avaliativa_biblioteca_Eduarda_Bolgenhagen_De_Campos#readme",
   "description": "",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "firebase-admin": "^11.0.0"
   }
 }
