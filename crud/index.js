@@ -44,3 +44,42 @@ async function salvar(nomeTabela, codigo, dados){
     }
 }
 
+async function get(nomeTabela){
+    const tabelaRef = collection(db, nometabela);
+    const q = query(tabelaRef);
+    const querySnapshot = await getDocs(q);
+    const lista = [];
+
+    querySnapshot.forEach((doc) => {
+        const data = {
+            ...doc.data(),
+            codigo : doc.codigo
+        }
+        lista.push(data);
+    })
+    return lista;
+}
+
+async function getByCodigo(nomeTabela, codigo){
+    const docRef = doc(db, nomeTabela, codigo);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()){
+        return docSnap.data();
+    } else {
+        return new Erros("Not found!");
+    }
+}
+
+async function remove(){
+    const dados = await deleteDoc(doc(db, nometabela, codigo));
+    return {
+        message
+    }
+}
+
+module.exports = {
+    salvar,
+    get,
+    getByCodigo
+}
