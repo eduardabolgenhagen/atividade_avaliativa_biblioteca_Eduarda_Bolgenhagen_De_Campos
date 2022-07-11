@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const clientesHandler = require("./clientes.handler")
+const editorasHandler = require("./editoras.handler")
 
 router.get("/", async (req, res) => {
-    res.json(await clientesHandler.buscarClientes());
+    res.json(await editorasHandler.buscarEditoras());
 });
 
 module.exports = router;

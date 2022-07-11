@@ -26,7 +26,7 @@ const app = initializaApp(firebaseConfig);
 
 const db = getFirestore();
 
-async function salvar(nomeTabela, codigo, dados){
+async function cadastrar(nomeTabela, codigo, dados){
     if (codigo){
         const referenceEntity = await setDoc(doc(db, nomeTabela), dados);
         const saveData = {
@@ -44,7 +44,7 @@ async function salvar(nomeTabela, codigo, dados){
     }
 }
 
-async function get(nomeTabela){
+async function buscar(nomeTabela){
     const tabelaRef = collection(db, nometabela);
     const q = query(tabelaRef);
     const querySnapshot = await getDocs(q);
@@ -60,7 +60,7 @@ async function get(nomeTabela){
     return lista;
 }
 
-async function getByCodigo(nomeTabela, codigo){
+async function buscarPorCodigo(nomeTabela, codigo){
     const docRef = doc(db, nomeTabela, codigo);
     const docSnap = await getDoc(docRef);
 
@@ -71,15 +71,16 @@ async function getByCodigo(nomeTabela, codigo){
     }
 }
 
-async function remove(){
-    const dados = await deleteDoc(doc(db, nometabela, codigo));
+async function remover(nomeTabela, codigo){
+    const dados = await deleteDoc(doc(db, nomeTabela, codigo));
     return {
         message
     }
 }
 
 module.exports = {
-    salvar,
-    get,
-    getByCodigo
+    cadastrar,
+    buscar,
+    buscarPorCodigo,
+    remover
 }
