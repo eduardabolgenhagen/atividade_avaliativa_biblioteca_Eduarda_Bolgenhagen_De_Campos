@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express();
-const usuariosHandler = require("./usuarios.handler");
+const clientesHandler = require("./clientes.handler");
 
 router.get("/", (req, res) => {
 
