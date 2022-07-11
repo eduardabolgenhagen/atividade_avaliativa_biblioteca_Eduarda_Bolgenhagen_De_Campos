@@ -1,4 +1,4 @@
-const { initializaApp } = require('firebase/app');
+const { initializEApp } = require('firebase/app');
 const {
     getFirestore,
     collection,
@@ -22,8 +22,7 @@ const firebaseConfig = {
     measurementId: "G-PY39H8YX90"
 }
 
-const app = initializaApp(firebaseConfig);
-
+const app = initializEApp(firebaseConfig);
 const db = getFirestore();
 
 async function cadastrar(nomeTabela, codigo, dados){
