@@ -1,6 +1,6 @@
 const crud = require("../../crud");
 
-function cadastrarClientes(){
+function cadastrarClientes(cliente){
     return await crud.cadastrar("clientes");
 }
 

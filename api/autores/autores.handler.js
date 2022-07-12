@@ -1,7 +1,7 @@
 const crud = require("../../crud");
 
-function cadastrarAutores(){
-    return await crud.cadastrar("autores");
+function cadastrarAutores(autor){
+    return await crud.cadastrar("autores", undefined, autor);
 }
 
 function buscarAutores(){

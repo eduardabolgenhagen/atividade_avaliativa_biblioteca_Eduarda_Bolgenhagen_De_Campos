@@ -10,10 +10,10 @@ router.get("/codigo", async (req, res) => {
     res.json(await clientesHandler.buscarClientesPorCodigo());
 });
 
-router.post("/", async (req, res) => {
-    // const cliente = req.body;
-    res.send(await clientesHandler.cadastrarClientes());
-});
+// router.post("/", async (req, res) => {
+//     const cliente = req.body;
+//     res.send(await clientesHandler.cadastrarClientes(cliente));
+// });
 
 router.delete("/codigo", async (req, res) => {
     res.json(await clientesHandler.removerClientes());
