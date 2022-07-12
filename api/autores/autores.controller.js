@@ -10,11 +10,11 @@ router.get("/", (req, res) => {
     res.json(await autoresHandler.buscarAutores());
 });
 
-router.get("/id", (req, res) => {
+router.get("/codigo", (req, res) => {
     res.json(await autoresHandler.buscarAutoresPorCodigo());
 });
 
-router.get("/", (req, res) => {
+router.get("/codigo", (req, res) => {
     res.json(await autoresHandler.buscarAutores());
 });
 

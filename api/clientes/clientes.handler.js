@@ -12,7 +12,7 @@ function buscarClientesPorCodigo(codigoCliente){
     return await crud.buscarPorCodigo("clientes");
 }
 
-function removerClientes(idCliente){
+function removerClientes(codigoCliente){
     return await crud.remover("clientes");
     //splice(index, 1);
 }

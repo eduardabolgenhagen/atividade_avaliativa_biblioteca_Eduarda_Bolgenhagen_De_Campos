@@ -1,13 +1,24 @@
 const crud = require("../../crud");
 
+function cadastrarEditoras(){
+    return await crud.cadastrar("editoras");
+}
+
 function buscarEditoras(){
     return await crud.buscar("editoras");
 }
 
-function buscarEditorasPorId(idCliente){
-    
+function buscarEditorasPorCodigo(codigoEditora){
+    return await crud.buscarPorCodigo("editoras");
+}
+
+function removerEditoras(codigoEditora){
+    return await crud.removerEditoras("editoras");
 }
 
 module.exports = {
-    buscarEditoras
+    cadastrarEditoras,
+    buscarEditoras,
+    buscarEditorasPorCodigo,
+    removerEditoras
 }

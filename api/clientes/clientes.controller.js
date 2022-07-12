@@ -6,7 +6,7 @@ router.get("/", async (req, res) => {
     res.json(await clientesHandler.buscarClientes());
 });
 
-router.get("/id", async (req, res) => {
+router.get("/codigo", async (req, res) => {
     res.json(await clientesHandler.buscarClientesPorCodigo());
 });
 
@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
     res.send(await clientesHandler.cadastrarClientes());
 });
 
-router.delete("/id", async (req, res) => {
+router.delete("/codigo", async (req, res) => {
     res.json(await clientesHandler.removerClientes());
 });
 
