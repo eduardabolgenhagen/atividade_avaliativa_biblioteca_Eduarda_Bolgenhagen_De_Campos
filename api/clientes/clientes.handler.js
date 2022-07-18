@@ -1,25 +1,25 @@
 const crud = require("../../crud");
 
-function cadastrarClientes(cliente){
-    return await crud.cadastrar("clientes");
+async function cadastrarClientes(cliente){
+    return await crud.cadastrar("clientes", undefined, cliente);
 }
 
-function buscarClientes(){
-    return await crud.buscar("clientes");
-}
+// function buscarClientes(){
+//     return await crud.buscar("clientes");
+// }
 
-function buscarClientesPorCodigo(codigoCliente){
-    return await crud.buscarPorCodigo("clientes");
-}
+// function buscarClientesPorCodigo(codigoCliente){
+//     return await crud.buscarPorCodigo("clientes");
+// }
 
-function removerClientes(codigoCliente){
-    return await crud.remover("clientes");
-    //splice(index, 1);
-}
+// function removerClientes(codigoCliente){
+//     return await crud.remover("clientes");
+//     //splice(index, 1);
+// }
 
 module.exports = {
-    cadastrarClientes,
-    buscarClientes,
-    buscarClientesPorCodigo,
-    removerClientes
+    cadastrarClientes
+    // buscarClientes,
+    // buscarClientesPorCodigo,
+    // removerClientes
 }

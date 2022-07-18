@@ -1,22 +1,22 @@
 const express = require("express");
 const router = express.Router();
-const clientesHandler = require("./clientes.handler")
+const clientesHandler = require("./clientes.handler");
 
-router.get("/", async (req, res) => {
-    res.json(await clientesHandler.buscarClientes());
+router.post("/", async (req, res) => {
+    const cliente = req.body;
+    res.send(await clientesHandler.cadastrarClientes(cliente));
 });
 
-router.get("/codigo", async (req, res) => {
-    res.json(await clientesHandler.buscarClientesPorCodigo());
-});
-
-// router.post("/", async (req, res) => {
-//     const cliente = req.body;
-//     res.send(await clientesHandler.cadastrarClientes(cliente));
+// router.get("/", async (req, res) => {
+//     res.json(await clientesHandler.buscarClientes());
 // });
 
-router.delete("/codigo", async (req, res) => {
-    res.json(await clientesHandler.removerClientes());
-});
+// router.get("/codigo", async (req, res) => {
+//     res.json(await clientesHandler.buscarClientesPorCodigo());
+// });
+
+// router.delete("/codigo", async (req, res) => {
+//     res.json(await clientesHandler.removerClientes());
+// });
 
 module.exports = router;

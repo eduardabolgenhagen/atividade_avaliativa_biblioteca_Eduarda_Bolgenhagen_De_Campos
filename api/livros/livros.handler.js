@@ -1,24 +1,24 @@
-const crud = require("../../crud");
+// const crud = require("../../crud");
 
-function cadastrarLivros(){
-    return await crud.cadastrar("livros");
-}
+// function cadastrarLivros(){
+//     return await crud.cadastrar("livros");
+// }
 
-function buscarLivros(){
-    return await crud.buscar("livros");
-}
+// function buscarLivros(){
+//     return await crud.buscar("livros");
+// }
 
-function buscarLivrosPorCodigo(){
-    return await crud.buscarPorCodigo("livros");
-}
+// function buscarLivrosPorCodigo(){
+//     return await crud.buscarPorCodigo("livros");
+// }
 
-function removerLivros(){
-    return await crud.removerLivros("livros");
-}
+// function removerLivros(){
+//     return await crud.removerLivros("livros");
+// }
 
-module.exports = {
-    cadastrarLivros,
-    buscarLivros,
-    buscarLivrosPorCodigo,
-    removerLivros
-}
+// module.exports = {
+//     cadastrarLivros,
+//     buscarLivros,
+//     buscarLivrosPorCodigo,
+//     removerLivros
+// }
