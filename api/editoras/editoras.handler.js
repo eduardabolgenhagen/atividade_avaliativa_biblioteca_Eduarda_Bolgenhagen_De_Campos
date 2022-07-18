@@ -1,24 +1,24 @@
-// const crud = require("../../crud");
+const crud = require("../../crud");
 
-// function cadastrarEditoras(){
-//     return await crud.cadastrar("editoras");
-// }
+async function cadastrarEditoras(editora){
+    return await crud.cadastrar("editoras", undefined, editora);
+}
 
-// function buscarEditoras(){
-//     return await crud.buscar("editoras");
-// }
+async function buscarEditoras(){
+    return await crud.buscar("editoras");
+}
 
-// function buscarEditorasPorCodigo(codigoEditora){
-//     return await crud.buscarPorCodigo("editoras");
-// }
+async function buscarEditorasPorCodigo(codigoEditora){
+    return await crud.buscarPorCodigo("editoras", codigoEditora);
+}
 
-// function removerEditoras(codigoEditora){
-//     return await crud.removerEditoras("editoras");
-// }
+async function removerEditoras(codigoEditora){
+    return await crud.remover("editoras", codigoEditora);
+}
 
-// module.exports = {
-//     cadastrarEditoras,
-//     buscarEditoras,
-//     buscarEditorasPorCodigo,
-//     removerEditoras
-// }
+module.exports = {
+    cadastrarEditoras,
+    buscarEditoras,
+    buscarEditorasPorCodigo,
+    removerEditoras
+}
