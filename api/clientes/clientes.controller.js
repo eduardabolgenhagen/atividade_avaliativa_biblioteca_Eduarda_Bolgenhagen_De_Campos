@@ -7,16 +7,18 @@ router.post("/", async (req, res) => {
     res.send(await clientesHandler.cadastrarClientes(cliente));
 });
 
-// router.get("/", async (req, res) => {
-//     res.json(await clientesHandler.buscarClientes());
-// });
+router.get("/", async (req, res) => {
+    res.json(await clientesHandler.buscarClientes());
+});
 
-// router.get("/codigo", async (req, res) => {
-//     res.json(await clientesHandler.buscarClientesPorCodigo());
-// });
+router.get("/:codigo", async (req, res) => {
+    const codigo = req.params.codigo;
+    res.json(await clientesHandler.buscarClientesPorCodigo(codigo));
+});
 
-// router.delete("/codigo", async (req, res) => {
-//     res.json(await clientesHandler.removerClientes());
-// });
+router.delete("/:codigo", async (req, res) => {
+    const codigo = req.params.codigo;
+    res.json(await clientesHandler.removerClientes(codigo));
+});
 
 module.exports = router;

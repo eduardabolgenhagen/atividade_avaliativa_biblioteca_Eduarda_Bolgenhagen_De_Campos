@@ -4,22 +4,21 @@ async function cadastrarClientes(cliente){
     return await crud.cadastrar("clientes", undefined, cliente);
 }
 
-// function buscarClientes(){
-//     return await crud.buscar("clientes");
-// }
+async function buscarClientes(){
+    return await crud.buscar("clientes");
+}
 
-// function buscarClientesPorCodigo(codigoCliente){
-//     return await crud.buscarPorCodigo("clientes");
-// }
+async function buscarClientesPorCodigo(codigoCliente){
+    return await crud.buscarPorCodigo("clientes", codigoCliente);
+}
 
-// function removerClientes(codigoCliente){
-//     return await crud.remover("clientes");
-//     //splice(index, 1);
-// }
+async function removerClientes(codigoCliente){
+    return await crud.remover("clientes", codigoCliente);
+}
 
 module.exports = {
-    cadastrarClientes
-    // buscarClientes,
-    // buscarClientesPorCodigo,
-    // removerClientes
+    cadastrarClientes,
+    buscarClientes,
+    buscarClientesPorCodigo,
+    removerClientes
 }

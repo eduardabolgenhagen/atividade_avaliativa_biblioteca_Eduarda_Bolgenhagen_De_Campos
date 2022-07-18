@@ -6,21 +6,21 @@ const {
     setDoc,
     addDoc,
     query,
-    where,
+    were,
     getDocs,
     getDoc,
     deleteDoc
 } = require('firebase/firestore/lite');
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDFkiQJcGI2omdv7LEbAE9fPLe4-XhOdwo",
-    authDomain: "first-database-access-firebase.firebaseapp.com",
-    projectId: "first-database-access-firebase",
-    storageBucket: "first-database-access-firebase.appspot.com",
-    messagingSenderId: "451994052578",
-    appId: "1:451994052578:web:fa4fb702ac7fbdc0233bbb",
-    measurementId: "G-PY39H8YX90"
-}
+    apiKey: "AIzaSyCUPqbanzfc8qG-YiB45VggXRWaenM6ijA",
+    authDomain: "biblioteca-blibol.firebaseapp.com",
+    projectId: "biblioteca-blibol",
+    storageBucket: "biblioteca-blibol.appspot.com",
+    messagingSenderId: "991625930225",
+    appId: "1:991625930225:web:4e398e01e834ff7d8dd050",
+    measurementId: "G-08NLZ02FDE"
+  };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
@@ -44,7 +44,7 @@ async function cadastrar(nomeTabela, codigo, dados){
 }
 
 async function buscar(nomeTabela){
-    const tabelaRef = collection(db, nometabela);
+    const tabelaRef = collection(db, nomeTabela);
     const q = query(tabelaRef);
     const querySnapshot = await getDocs(q);
     const lista = [];
@@ -72,6 +72,7 @@ async function buscarPorCodigo(nomeTabela, codigo){
 
 async function remover(nomeTabela, codigo){
     const dados = await deleteDoc(doc(db, nomeTabela, codigo));
+    console.log("Removido com sucesso");
     return {
         message
     }
