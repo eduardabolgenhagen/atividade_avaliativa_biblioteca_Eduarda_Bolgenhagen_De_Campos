@@ -1,24 +1,24 @@
 const crud = require("../../crud");
 
-// function cadastrarAutores(autor){
-//     return await crud.cadastrar("autores", undefined, autor);
-// }
+async function cadastrarAutores(autor){
+    return await crud.cadastrar("autores", undefined, autor);
+}
 
-// function buscarAutores(){
-//     return await crud.buscar("autores");
-// }
+async function buscarAutores(){
+    return await crud.buscar("autores");
+}
 
-// function buscarAutoresPorCodigo(){
-//     return await crud.buscarPorCodigo("autores");
-// }
+async function buscarAutoresPorCodigo(codigoAutor){
+    return await crud.buscarPorCodigo("autores", codigoAutor);
+}
 
-// function removerAutores(){
-//     return await crud.remover("autores");
-// }
+async function removerAutores(codigoAutor){
+    return await crud.remover("autores", codigoAutor);
+}
 
 module.exports = {
-    // cadastrarAutores,
-    // buscarAutores,
-    // buscarAutoresPorCodigo,
-    // removerAutores
+    cadastrarAutores,
+    buscarAutores,
+    buscarAutoresPorCodigo,
+    removerAutores
 }
