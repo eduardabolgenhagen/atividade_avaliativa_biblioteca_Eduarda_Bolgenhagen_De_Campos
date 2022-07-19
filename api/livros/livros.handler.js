@@ -13,7 +13,7 @@ async function buscarLivrosPorCodigo(codigoLivro){
 }
 
 async function removerLivros(codigoLivro){
-    return await crud.removerLivros("livros", codigoLivro);
+    return await crud.remover("livros", codigoLivro);
 }
 
 module.exports = {
