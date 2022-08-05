@@ -12,11 +12,21 @@ async function cadastrarLocacao(locacao, codigoCliente) {
     }
 }
 
+async function buscarLocacoes(){
+    return await crud.buscar("locacoes");
+}
+
 async function buscarLocacaoPorCodigo(codigoLocacao) {
     return await crud.buscarPorCodigo("locacao", codigoLocacao);
 }
 
+async function removerLocacao(codigoLocacao){
+    return await crud.remover("locacao", codigoLocacao);
+}
+
 module.exports = {
     buscarLocacaoPorCodigo,
-    cadastrarLocacao
+    cadastrarLocacao,
+    buscarLocacoes,
+    removerLocacao
 }

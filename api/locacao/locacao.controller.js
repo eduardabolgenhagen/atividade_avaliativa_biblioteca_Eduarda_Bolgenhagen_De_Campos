@@ -11,6 +11,15 @@ router.post("/", async (req, res) => {
 router.get("/:codigo", async (req, res) => {
     const codigo = req.params.codigo;
     res.json(await locacaoController.buscarLocacaoPorCodigo(codigo));
-})
+});
+
+router.get("/", async (req, res) => {
+    res.json(await locacaoController.buscarLocacoes());
+});
+
+router.remove("/", async (req, res) => {
+    const codigo = req.params.codigo;
+    res.json(await locacaoController.removerLocacao(codigo));
+});
 
 module.exports = router;
