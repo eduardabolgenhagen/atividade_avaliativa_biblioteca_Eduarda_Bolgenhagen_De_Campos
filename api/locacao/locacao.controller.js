@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
     res.json(await locacaoController.buscarLocacoes());
 });
 
-router.remove("/", async (req, res) => {
+router.delete("/", async (req, res) => {
     const codigo = req.params.codigo;
     res.json(await locacaoController.removerLocacao(codigo));
 });

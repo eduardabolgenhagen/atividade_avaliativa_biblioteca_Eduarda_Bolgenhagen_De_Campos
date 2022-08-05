@@ -1,11 +1,11 @@
 const crud = require("../../crud");
 
 async function cadastrarLivros(livro) {
-    if (crud.buscarPorCodigo(autores, livro.autores)) {
+    // if (crud.buscarPorCodigo(autores, livro.autores)) {
         return await crud.cadastrar("livros", undefined, livro);
-    } else {
-        console.log("Autor não cadastrado.")
-    }
+    // } else {
+    //     console.log("Autor não cadastrado.")
+    // }
 }
 
 async function buscarLivros() {
