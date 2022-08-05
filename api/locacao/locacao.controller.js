@@ -5,7 +5,7 @@ const locacaoController = require("./locacao.handler");
 router.post("/", async (req, res) => {
     const locacao = req.body;
     const codigoCliente = locacao.codigoCliente;
-    res.json(await locacaoController.cadastrarLocacao(locacao, codigoCliente));
+    res.json(await locacaoController.cadastrarLocacao(codigoCliente, locacao));
 });
 
 router.get("/:codigo", async (req, res) => {
