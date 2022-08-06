@@ -16,18 +16,16 @@ async function cadastrarLocacao(codigoCliente, locacao) {
     //     return cadastro;
     // }
 
-    // if (crud.buscarPorCodigo("locacao", codigoCliente) != locacao.codigoCliente & buscarLivrosPorCodigo(locacao.codigoLivro) != locacao.codigoLivro) {
-
-    //     console.log("entrou pra dar boa")
-    //     const cadastro = await crud.cadastrar("locacao", undefined, locacao);
-    //     console.log("livre para locar");
-    //     return cadastro;
-
-    // } else {
-
-    //     console.log("Cliente com locação ativa ou livro já locado.");
-    //     return false;
-    // }
+    if (crud.buscarPorCodigo("locacao", codigoCliente) === locacao.codigoCliente &
+        buscarLivrosPorCodigo(locacao.codigoLivro) === locacao.codigoLivro) {
+        console.log("Cliente com locação ativa ou livro já locado.");
+        return false;
+    } else {
+        console.log("entrou pra dar boa")
+        const cadastro = await crud.cadastrar("locacao", undefined, locacao);
+        console.log("livre para locar");
+        return cadastro;
+    }
 }
 
 
