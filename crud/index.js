@@ -66,8 +66,7 @@ async function buscarPorCodigo(nomeTabela, codigo) {
     if (docSnap.exists()) {
         return docSnap.data();
     } else {
-        // return new Erros("Not found!");
-        return console.log("deu ruim mas relaxa")
+        return new Erros("Not found!");
     }
 }
 
@@ -75,7 +74,7 @@ async function remover(nomeTabela, codigo) {
     const dados = await deleteDoc(doc(db, nomeTabela, codigo));
     console.log("Removido com sucesso");
     return {
-        message
+        message: `${codigo} removido!`
     }
 }
 

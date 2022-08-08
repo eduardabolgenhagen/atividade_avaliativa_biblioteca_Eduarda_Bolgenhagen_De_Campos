@@ -1,11 +1,23 @@
 const crud = require("../../crud");
+const {cadastrar} = require("../autoresElivros/autoresElivros.handler");
 
 async function cadastrarLivros(livro) {
-    // if (crud.buscarPorCodigo(autores, livro.autores)) {
-        return await crud.cadastrar("livros", undefined, livro);
-    // } else {
-    //     console.log("Autor não cadastrado.")
-    // }
+    const dadosLivro = {
+        titulo: livro.titulo,
+        qtdPaginas: livro.qtdPaginas,
+        alugado: false
+    };
+    const autoresDoLivro = livro.autores;
+
+    for (let codigoAutores of autores) {
+        const autoresElivros = {
+            codigoAutor: codigoAutor,
+            codigoLivro: codigoLivro
+        }
+
+        await cadastrar(autoresElivros);
+    }
+    return await crud.cadastrar("livros", undefined, dadosLivro);
 }
 
 async function buscarLivros() {
