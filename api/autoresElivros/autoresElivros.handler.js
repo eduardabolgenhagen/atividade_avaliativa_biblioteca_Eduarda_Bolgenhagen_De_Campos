@@ -1,7 +1,7 @@
 const crud = require("../../crud/index");
 
-async function cadastrar(autoresElivros) {
-    return await crud.cadastrar("autoresElivros", undefined, autoresElivros);
+async function cadastrar(autoreslivros) {
+    return await crud.cadastrar("autoresElivros", undefined, autoreslivros);
 }
 
 async function buscarPorCodigo(codigo) {

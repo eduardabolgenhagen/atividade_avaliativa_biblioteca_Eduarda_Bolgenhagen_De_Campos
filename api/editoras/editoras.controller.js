@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const editorasHandler = require("./editoras.handler");
 
 router.post("/", async (req, res) => {
     const editora = req.body;

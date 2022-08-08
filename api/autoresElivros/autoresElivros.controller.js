@@ -4,7 +4,7 @@ const autoresElivros = require("./autoresElivros.handler");
 
 router.post("/", async (req, res) => {
     const autoreslivros = req.body;
-    res.json(await autoresElivros.cadastrar(autoresElivros));
+    res.json(await autoresElivros.cadastsrar(autoreslivros));
 });
 
 router.get("/:codigo", async (req, res) => {
