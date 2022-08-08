@@ -1,5 +1,5 @@
 const crud = require("../../crud");
-const {cadastrar} = require("../autoresElivros/autoresElivros.handler");
+const autoresElivrosHandler = require("../autoresElivros/autoresElivros.handler");
 
 async function cadastrarLivros(livro) {
     const dadosLivro = {
@@ -7,20 +7,22 @@ async function cadastrarLivros(livro) {
         qtdPaginas: livro.qtdPaginas,
         alugado: false
     };
+
     const autoresDoLivro = livro.autores;
 
-    for (let codigoAutores of autores) {
+    for (let codigoAutores of autoresDoLivro) {
         const autoresElivros = {
             codigoAutor: codigoAutor,
             codigoLivro: codigoLivro
         }
 
-        await cadastrar(autoresElivros);
+        await autoresElivrosHandler.cadastrar(autoresElivros);
     }
     return await crud.cadastrar("livros", undefined, dadosLivro);
 }
 
-async function editarLivro(){
+async function editarLivro() {
+    //verificar
     return await crud.editar();
 }
 

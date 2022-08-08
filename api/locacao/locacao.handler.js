@@ -41,35 +41,35 @@ async function cadastrarLocacao(codigoClienteLocacao, locacao) {
             }
         }
 
-        //my
-        if (crud.buscarPorCodigo("locacao", codigoCliente) === locacao.codigoCliente &
-            buscarLivrosPorCodigo(locacao.codigoLivro) === locacao.codigoLivro) {
-            console.log("Cliente com locação ativa ou livro já locado.");
-            return false;
-        } else {
-            console.log("entrou pra dar boa")
-            const cadastro = await crud.cadastrar("locacao", undefined, locacao);
-            console.log("livre para locar");
-            return cadastro;
+        for (let codigoLivro of listaLivros) {
+            const livroAlugado = {
+                codigoLivro: codigoLivro,
+                codigoLocacao: codigoLocacao
+            }
+
+            await cadastrarLivrosAlugados(livroAlugado);
         }
+
+        await crud.cadastrar("locacao", undefined, { codigoCliente: codigoCliente });
     }
+}
 
 
-    async function buscarLocacoes() {
-        return await crud.buscar("locacoes");
-    }
+async function buscarLocacoes() {
+    return await crud.buscar("locacao");
+}
 
-    async function buscarLocacaoPorCodigo(codigoLocacao) {
-        return await crud.buscarPorCodigo("locacao", codigoLocacao);
-    }
+async function buscarLocacaoPorCodigo(codigoLocacao) {
+    return await crud.buscarPorCodigo("locacao", codigoLocacao);
+}
 
-    async function removerLocacao(codigoLocacao) {
-        return await crud.remover("locacao", codigoLocacao);
-    }
+async function removerLocacao(codigoLocacao) {
+    return await crud.remover("locacao", codigoLocacao);
+}
 
-    module.exports = {
-        buscarLocacaoPorCodigo,
-        cadastrarLocacao,
-        buscarLocacoes,
-        removerLocacao
-    }
+module.exports = {
+    buscarLocacaoPorCodigo,
+    cadastrarLocacao,
+    buscarLocacoes,
+    removerLocacao
+}

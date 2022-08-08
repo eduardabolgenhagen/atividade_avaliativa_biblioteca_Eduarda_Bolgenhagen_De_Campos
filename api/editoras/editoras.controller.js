@@ -15,7 +15,7 @@ router.get("/:codigo", async (req, res) => {
     res.json(await editorasHandler.buscarEditorasPorCodigo(codigo));
 });
 
-router.delete("/:codigo", async (req, res) => {    
+router.delete("/:codigo", async (req, res) => {
     const codigo = req.params.codigo;
     res.json(await editorasHandler.removerEditoras(codigo));
 });

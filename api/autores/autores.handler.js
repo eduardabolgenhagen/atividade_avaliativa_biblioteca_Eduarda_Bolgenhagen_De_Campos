@@ -1,18 +1,18 @@
 const crud = require("../../crud");
 
-async function cadastrarAutores(autor){
+async function cadastrarAutores(autor) {
     return await crud.cadastrar("autores", undefined, autor);
 }
 
-async function buscarAutores(){
+async function buscarAutores() {
     return await crud.buscar("autores");
 }
 
-async function buscarAutoresPorCodigo(codigoAutor){
+async function buscarAutoresPorCodigo(codigoAutor) {
     return await crud.buscarPorCodigo("autores", codigoAutor);
 }
 
-async function removerAutores(codigoAutor){
+async function removerAutores(codigoAutor) {
     return await crud.remover("autores", codigoAutor);
 }
 

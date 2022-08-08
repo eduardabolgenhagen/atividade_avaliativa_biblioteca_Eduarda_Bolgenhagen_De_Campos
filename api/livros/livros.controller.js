@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const livrosHandler = require("./livros.handler")
 
-router.post("/", async (req, res) =>{
+router.post("/", async (req, res) => {
     const livro = req.body;
     res.json(await livrosHandler.cadastrarLivros(livro));
 });
