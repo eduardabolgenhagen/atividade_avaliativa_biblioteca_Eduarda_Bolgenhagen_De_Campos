@@ -5,6 +5,12 @@ const livrosHandler = require("./livros.handler")
 router.post("/", async (req, res) =>{
     const livro = req.body;
     res.json(await livrosHandler.cadastrarLivros(livro));
+});
+
+router.put("/", async (req, res) => {
+    const livro = req.body;
+    const codigoLivro = livro.codigoLivro;
+    res.json(await livrosHandler.editarLivro(livro, codigoLivro));
 })
 
 router.get("/", async (req, res) => {

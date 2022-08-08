@@ -20,6 +20,10 @@ async function cadastrarLivros(livro) {
     return await crud.cadastrar("livros", undefined, dadosLivro);
 }
 
+async function editarLivro(){
+    return await crud.editar();
+}
+
 async function buscarLivros() {
     return await crud.buscar("livros");
 }
@@ -34,6 +38,7 @@ async function removerLivros(codigoLivro) {
 
 module.exports = {
     cadastrarLivros,
+    editarLivro,
     buscarLivros,
     buscarLivrosPorCodigo,
     removerLivros
